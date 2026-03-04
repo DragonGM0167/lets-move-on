@@ -81,9 +81,9 @@ export class LetsMoveOn {
         if (actorId == null || actorId == undefined) {
             return;
         }
-        const request = this.getByActorId(actorId);
+        let request = this.getByActorId(actorId);
         if (request == null || request == undefined) {
-            return;
+            request = this.create(user._id, actorId);
         }
         return this.#update(request, { isSociable: request.isSociable ^= true })
     }
