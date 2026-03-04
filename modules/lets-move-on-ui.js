@@ -3,9 +3,11 @@ import { LetsMoveOnUtils } from "./lets-move-on-utils.js";
 
 export class LetsMoveOnUI extends FormApplication {
     static instance = null;
+    static intervalHandle = null;
 
     static activate() {
-        if (game.user.isGM) {
+        const user = game.user;
+        if (user.isGM) {
             if (!this.instance) {
                 this.instance = new LetsMoveOnUI();
             }
@@ -15,6 +17,13 @@ export class LetsMoveOnUI extends FormApplication {
             else {
                 this.instance.bringToTop();
             }
+            if (this.intervalHandle != null) {
+                clearInterval(this.intervalHandle);
+            }
+            this.intervalHandle = setInterval(() => { this.refresh(); }, 5000);
+        }
+        else {
+            LetsMoveOn.toggleSociable(user.character._id);
         }
     }
 
@@ -59,5 +68,6 @@ export class LetsMoveOnUI extends FormApplication {
                 LetsMoveOn.toggleSociable(characterDataArray[index].actorId);
             });
         }
+        ui.controls.render(true);
     }    
 }

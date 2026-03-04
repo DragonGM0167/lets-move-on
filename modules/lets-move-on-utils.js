@@ -60,9 +60,12 @@ export class LetsMoveOnUtils {
                 sideButtons += `<div style="display: grid;grid-template-columns: 80% 20%;grid-template-rows: 2em">`;
                 sideButtons += `<div><button style="background-color: ${playerColor};color: ${this.#contrastColor(playerColor, true)};`
                 sideButtons += ` text-align: center;" data-action="${characterDataArray[index].actorId}">${characterDataArray[index].actorName}</button></div><div>`;
-                sideButtons += `<input type="checkbox" id="${characterDataArray[index].actorId}"`;
+                sideButtons += `<input type="checkbox" id="${characterDataArray[index].actorId}" disabled`;
                 if (characterDataArray[index].isSociable) {
                     sideButtons += ` checked>`;
+                }
+                else {
+                    sideButtons += `>`;
                 }
                 sideButtons += "</div></div></div>\n";
             }

@@ -6,10 +6,6 @@ export class LetsMoveOn {
 
     // Private methods
     static #update(request, requestData) {
-        if (!game.user.isGM) {
-            ui.notifications.error("You don't have permission to update social requests.");
-            return;
-        }
         if (request == null || request == undefined) {
             return;
         }
@@ -82,6 +78,9 @@ export class LetsMoveOn {
 
     // Toggle the social request
     static toggleSociable(actorId) {
+        if (actorId == null || actorId == undefined) {
+            return;
+        }
         const request = this.getByActorId(actorId);
         if (request == null || request == undefined) {
             return;
