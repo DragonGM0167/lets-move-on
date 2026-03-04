@@ -1,0 +1,33 @@
+{
+  "id": "lets-move-on",
+  "title": "Let's Move On",
+  "description": "Allows the players to indicate that they are ready to move on to the next part of the adventure/done socializing as their character.",
+  "authors": [
+    {
+      "name": "DragonGM",
+      "url": "https://github.com/DragonGM0167",
+      "discord": "dragon_gm0167",
+      "flags": {}
+    }
+  ],
+  "version": "1.0.0",
+  "compatibility": {
+    "minimum": "10",
+    "verified": "13"
+  },
+  "esmodules": [
+    "modules/lets-move-on-app.js"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json",
+      "flags": {}
+    }
+  ],
+  "url": "https://github.com/DragonGM0167/lets-move-on",
+  "bugs": "https://github.com/DragonGM0167/lets-move-on/issues",
+  "manifest": "https://github.com/DragonGM0167/lets-move-on/releases/latest/download/module.json",
+  "download": "https://github.com/DragonGM0167/lets-move-on/releases/latest/download/module.zip"
+}
