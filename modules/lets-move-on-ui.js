@@ -32,7 +32,7 @@ export class LetsMoveOnUI extends FormApplication {
     }
 
     static get defaultOptions() {
-        const windowHeight = (game.users._source.length - 1) * 50;
+        const windowHeight = (game.users._source.length - 1) * 40;
         return foundry.utils.mergeObject(super.defaultOptions, {
             classes: ["sheet"],
             height: windowHeight,
