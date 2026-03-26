@@ -12,7 +12,7 @@ export class LetsMoveOn {
         const updatedRequest = {
             actorId: request.actorId,
             userId: request.userId,
-            trackerId: request.trackerId,
+            requestId: request.requestId,
             isSociable: requestData.isSociable,
         };
         const modifiedRequest = {
@@ -33,7 +33,7 @@ export class LetsMoveOn {
         const requests = {
             [`-=${request.actorId}`]: null
         }
-        game.users.get(tracker.userId)?.setFlag(LetsMoveOn.ID, LetsMoveOn.FLAGS.LETS_MOVE_ON, requests);
+        game.users.get(request.userId)?.setFlag(LetsMoveOn.ID, LetsMoveOn.FLAGS.LETS_MOVE_ON, requests);
     }
 
     // Public Methods
